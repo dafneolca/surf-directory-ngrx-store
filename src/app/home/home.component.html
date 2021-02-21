@@ -5,8 +5,8 @@
 </nav>
 
 <div class="container py-5">
-  <h5>Overview</h5>
-  <table class="table table-hover w-auto m-auto">
+  <h5 class="text-center">Overview</h5>
+  <table class="table table-hover m-auto">
     <thead>
       <tr>
         <th *ngFor="let header of tableHeaders; let i = index" scope="col">
@@ -25,7 +25,7 @@
             </ng-container>
           </td>
 
-          
+
           <td *ngIf="header.dataType == 'INTEGER'">
             {{ data[header.name] }}
             <ng-container *ngIf="data[header.name] && header.presentation.unitOfMeasure">
@@ -46,13 +46,19 @@
               [{{ header.presentation.unitOfMeasure }}]
             </ng-container>
           </td>
-          <td *ngIf="header.dataType == 'BOOLEAN'" class="text-center">
+          <td *ngIf="header.dataType == 'BOOLEAN'" >
             <fa-icon *ngIf="data[header.name] === true" [icon]="faCheck">
             </fa-icon>
           </td>
         </ng-container>
       </tr>
     </tbody>
-    <button class="btn btn-success" (click)="onNew()">New</button>
   </table>
+
+  <div class="row">
+    <div class="col">
+      <button class="btn btn-info float-right m-4" (click)="onNew()">New</button>
+    </div>
+  </div>
+
 </div>

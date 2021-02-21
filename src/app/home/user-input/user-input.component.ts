@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import dataModel from '../../../assets/data/model.json';
 
@@ -38,6 +38,23 @@ export class UserInputComponent implements OnInit {
   paramSubscription: Subscription;
   site: Site;
 
+  bestMonths = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December',
+  ];
+
+  selectedMonths: any[] = [];
+
   constructor(
     private router: Router,
     private route: ActivatedRoute,
@@ -60,7 +77,6 @@ export class UserInputComponent implements OnInit {
     });
 
     this.getAttributes();
-
     this.paramSubscription = this.route.params.subscribe((res) => {
       if (res.id == 'new') {
         this.newSite = true;
@@ -75,25 +91,6 @@ export class UserInputComponent implements OnInit {
     this.attributes = Object.values(dataModel.classes['Site'].attributes);
     this.headers = this.attributes.map((attr) => {
       return attr.name;
-    });
-    this.attributes.map((el) => {
-      if (el.dataType === 'DATE') {
-        const maxDate = new Date(el.constraints?.maxDate);
-        const minDate = new Date(el.constraints?.minDate);
-
-        // todo: format data type
-        // if (el.constraints?.maxDate) {
-        //   el.constraints.maxDate = maxDate;
-        // }
-        // if (el.constraints?.minDate) {
-        //   el.constraints.minDate = minDate;
-        // }
-      }
-      if (el.dataType == 'FLOAT' && this.siteForm[el.name] != null) {
-        const decimalPlaces = el.presentation.decimalPlaces;
-        const num = parseFloat(this.siteForm[el.name]).toFixed(decimalPlaces);
-        this.siteForm[el.name] = num;
-      }
     });
   }
 

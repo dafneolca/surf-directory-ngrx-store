@@ -80,7 +80,8 @@
             "shortLabel": "Best Months",
             "description": "Best Months",
             "group": "Another Group",
-            "index": 0
+            "index": 0,
+            "isArray": true
           },
           "constraints": {
             "maxDate": "2100-01-01"

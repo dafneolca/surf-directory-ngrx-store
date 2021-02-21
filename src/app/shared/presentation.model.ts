@@ -24,14 +24,13 @@ export interface SitesClassModel {
   name: AttributesModel;
   country: AttributesModel;
   averageSwell: AttributesModel;
-  bestMonths: AttributesModel;
+  bestMonths: [AttributesModel];
   favorite: AttributesModel;
 }
 
 export interface AttributesModel {
   isUserDefined: boolean;
   name: string;
-  // dataType: DataType;
   dataType: string;
   minCardinality: number;
   maxCardinality: number;
@@ -48,6 +47,7 @@ export interface Presentation {
   isDropdown?: boolean;
   isTypeahead?: boolean;
   decimalPlaces?: number;
+  isArray?: boolean;
 }
 
 export interface Constraints {

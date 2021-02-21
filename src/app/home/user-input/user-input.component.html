@@ -6,7 +6,7 @@
             {{ attributes[i].presentation.label }}
             <span *ngIf="attributes[i].minCardinality > 0">*</span>
             <fa-icon class="float-right" tooltip="{{ attributes[i].presentation.description }}" [icon]="faInfoCircle"></fa-icon>
-            <input *ngIf="attributes[i].dataType === 'STRING' || attributes[i].dataType === 'DATE'" type="text" [id]="attr" class="form-control" [formControlName]="attr">
+            <input *ngIf="attributes[i].dataType === 'STRING' && !attributes[i].presentation.isArray" type="text" [id]="attr" class="form-control" [formControlName]="attr">
             <input *ngIf="attributes[i].dataType === 'INTEGER' || attributes[i].dataType === 'FLOAT'" type="number" [id]="attr" class="form-control" [formControlName]="attr">
             <input *ngIf="attributes[i].dataType === 'BOOLEAN'" type="checkbox" [id]="attr" [formControlName]="attr">
         </div>
@@ -15,8 +15,8 @@
   </div>
 
   <div class="row">
-    <div class="col-md-6 my-3 px-0">
-      <button class="btn btn-success" type="submit" [disabled]="!siteForm.valid">
+    <div class="col-md-12 px-0">
+      <button class="btn btn-info float-right m-4" type="submit" [disabled]="!siteForm.valid">
         Save
       </button>
     </div>

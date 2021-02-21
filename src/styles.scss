@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  background: url('./assets/images/jeremy-bishop-hawaii.jpg');
+  background-size: cover;
+}
+
+.container{
+  background: rgba(0, 0, 0, 0.4);
+  color:white;
+}
+
+.table{
+  position:relative !important;
+  color:white;
+  tr {
+    color:white;
+  }
+  :hover{
+    cursor: pointer;
+  }
+}
