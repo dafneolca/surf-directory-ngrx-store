@@ -1,0 +1,106 @@
+{
+  "version": 5,
+  "classes": {
+    "Site": {
+      "name": "Surf Spot",
+      "isAbstract": false,
+      "isUserDefined": false,
+      "presentation": {
+        "label": "Surf Spot",
+        "shortLabel": "Surf Spot",
+        "description": "Surf Spot"
+      },
+      "attributes": {
+        "name": {
+          "isUserDefined": false,
+          "name": "name",
+          "dataType": "STRING",
+          "minCardinality": 1,
+          "maxCardinality": 1,
+          "presentation": {
+            "label": "Surf Spot",
+            "shortLabel": "Surf Spot",
+            "description": "Surf Spot",
+            "group": "General",
+            "index": 0,
+            "isDropdown": false,
+            "isTypeahead": false
+          },
+          "constraints": {
+            "maxLength": 200,
+            "minLength": 5
+          }
+        },
+        "country": {
+          "isUserDefined": false,
+          "name": "country",
+          "dataType": "STRING",
+          "minCardinality": 0,
+          "maxCardinality": 1,
+          "presentation": {
+            "label": "Country",
+            "shortLabel": "Country",
+            "description": "Country",
+            "group": "General",
+            "index": 2
+          },
+          "constraints": {
+            "maxLength": 200,
+            "minLength": 5
+          }
+        },
+        "averageSwell": {
+          "isUserDefined": false,
+          "name": "averageSwell",
+          "dataType": "FLOAT",
+          "minCardinality": 0,
+          "maxCardinality": 1,
+          "presentation": {
+            "label": "Average Swell",
+            "shortLabel": "Average Swell",
+            "description": "Average Swell Size",
+            "group": "General",
+            "index": 3,
+            "unitOfMeasure": "m",
+            "decimalPlaces": 3
+          },
+          "constraints": {
+            "minValue": -100.0,
+            "maxValue": 2000.0
+          }
+        },
+        "bestMonths": {
+          "isUserDefined": false,
+          "name": "bestMonths",
+          "dataType": "STRING",
+          "minCardinality": 0,
+          "maxCardinality": 1,
+          "presentation": {
+            "label": "Best Months",
+            "shortLabel": "Best Months",
+            "description": "Best Months",
+            "group": "Another Group",
+            "index": 0
+          },
+          "constraints": {
+            "maxDate": "2100-01-01"
+          }
+        },
+        "favorite": {
+          "isUserDefined": false,
+          "name": "favorite",
+          "dataType": "BOOLEAN",
+          "minCardinality": 0,
+          "maxCardinality": 1,
+          "presentation": {
+            "label": "Favorite",
+            "shortLabel": "Favorite",
+            "description": "Mark as Favorite",
+            "group": "General",
+            "index": 1
+          }
+        }
+      }
+    }
+  }
+}

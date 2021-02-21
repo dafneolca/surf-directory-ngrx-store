@@ -1,0 +1,33 @@
+[{
+    "name": "Arrifana",
+    "country": "Portugal",
+    "averageSwell": 2,
+    "bestMonths": ["January", "February"],
+    "favorite": true,
+    "id": 1
+  },
+  {
+    "name": "Baleal",
+    "country": "Portugal",
+    "averageSwell":1.6,
+    "bestMonths": null,
+    "favorite": true,
+    "id": 2
+  },
+  {
+    "name": "La Cicer",
+    "country": "Spain",
+    "averageSwell": 2.3,
+    "bestMonths": ["March", "April"],
+    "favorite": false,
+    "id": 3
+  },
+  {
+    "name": "El Cotillo",
+    "country": "Spain",
+    "averageSwell": 0.5,
+    "bestMonths": ["May", "August"],
+    "favorite": true,
+    "id": 4
+  }
+]
